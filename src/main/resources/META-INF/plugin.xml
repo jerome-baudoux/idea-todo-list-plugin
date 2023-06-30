@@ -1,0 +1,36 @@
+<idea-plugin>
+    <id>com.jerome-baudoux.idea.plugin.todolist</id>
+    <name>Jerome Baudoux Todo List</name>
+
+    <vendor email="contact@jerome-baudoux.com" url="https://www.jerome-baudoux.com">Jérôme Baudoux</vendor>
+    <description><![CDATA[S mall TODO list plugin that was aimed just to try and lear how to create a plugin]]></description>
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow
+                id="TODO"
+                secondary="true"
+                icon="AllIcons.Toolwindows.WebToolWindow"
+                anchor="right"
+                factoryClass="com.jbaplugin.dummyplugin.TodoFactory"/>
+    </extensions>
+
+    <actions>
+        <action
+                id="JBAAction"
+                class="com.jbaplugin.dummyplugin.JbaAction"
+                text="JBA"
+                description="JBA"
+                icon="AllIcons.Actions.Rollback">
+            <add-to-group group-id="ToolbarRunGroup" anchor="first"/>
+        </action>
+        <action id="JBAForward" class="com.intellij.ide.actions.ForwardAction" icon="AllIcons.Actions.Forward">
+            <add-to-group group-id="ToolbarRunGroup" anchor="first"/>
+        </action>
+        <action
+                id="JBABack" class="com.intellij.ide.actions.BackAction"
+                icon="AllIcons.Actions.Back">
+            <add-to-group group-id="ToolbarRunGroup" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
